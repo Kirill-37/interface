@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var login: UITextField!
-    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var signInLogin: UITextField!
+    @IBOutlet weak var signInPassword: UITextField!
     
+    private let rightLogin = "Kharuzin"
+    private let rightPassword = "123456"
+    
+    @IBOutlet weak var logoVK: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,10 +29,10 @@ class ViewController: UIViewController {
         view.endEditing(true)
     }
     
-    @IBAction func pressButton(_ sender: Any) {
-        guard let loginInput = login.text,
-              let passwordInput = password.text else {
-            return
+    @IBAction func loginButton(_ sender: Any) {
+        guard let loginInput = signInLogin.text, !loginInput.isEmpty,
+            let passwordInput = signInPassword.text, !passwordInput.isEmpty else {
+                showAllert(title: "Error!", message: "Login or Password was not entered", titleAction: "OK")
         }
         print(loginInput + " " + passwordInput)
     }
