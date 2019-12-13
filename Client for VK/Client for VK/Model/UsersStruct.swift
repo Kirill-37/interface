@@ -21,11 +21,13 @@ enum UserStatus: String {
     case engaged
 }
 
-class User {
+struct User {
     var userName: String = ""
     var userSurname: String = ""
     var userAge: Int = 0
-    var userGender: UserGender
-    var userStatus: UserStatus
+    private var userGender: UserGender
+    private var userStatus: UserStatus
 }
+
+
 

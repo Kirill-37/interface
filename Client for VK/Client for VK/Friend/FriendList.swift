@@ -9,8 +9,8 @@
 import UIKit
 
 class FriendList: UITableViewController {
-
-    var friendList = ["Иван Петрович", "Петр Иванович", "Федор Аркадьевич"]
+    
+    var friendList = User
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +29,8 @@ class FriendList: UITableViewController {
         return cell
     }
     
+
+        
    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let username = friendList[indexPath.row]
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
